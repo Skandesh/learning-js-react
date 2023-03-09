@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Namaste React</title>
+    <!--link rel="stylesheet" href="style.css"-->
+
+    <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
+     <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+
+</head>
+<body>
+
+    <!--1.  Displaying the heading using HTML <h1> tag
+    <h1>Namaste Anaivarum!</h1>
+    -->
+
+
+    <!--2.  Creating an element using javascript and appending it to the root element using 'appendChild()'
+   
+    <div id="root"></div>
+    <script>
+        const head = document.createElement('h1');
+        head.innerHTML = "Vanakkam Anaivarukkum JS'il irunthu..";
+        document.getElementById("root").appendChild(head);  // appending the tag created from JS to the root element div
+    </script>
+     -->
+
+
+     <!--3. Injecting React's CDN and creating `h1` using react:
+        a. First link to fetch the React code - which is more generic(core library) and base to all applications
+            - Injects an Object inside the browser engine called - React
+        b. Second link is specifically for browsers - ReactDOM to manipulate the `document` object present inside the browser, it is seperated as React has other platforms to server like React Native, React 3D.
+            - Injects an Object inside the browser engine called - ReactDOM
+    -->
+
+     <!-- <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
+     <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script> -->
+
+     <div id="root">NOT RENDERED
+        <h1 id="title">TESTING IF IT IS DISPLAYED, when rendered with REACT</h1>
+        <h1>since only the root 'id' is rendered the tags inside those is not rendered</h1>
+    </div>
+
+    <h1>OUTSIDE ROOT which ain't rendered by REACT</h1>
+    
+
+     <script>
+        
+        const headingUsingReact = React.createElement("h1", {
+             id:"title",
+        } ,
+        
+        "Vanakkam da mapla, React la irunthu");
+        //injecting this element into the 'root' div tag using ReactDOM since we are going to use the browser's already injected 'document' object.
+        const root = ReactDOM.createRoot(document.getElementById("root"));
+        root.render(headingUsingReact);
+        
+     </script>
+
+</body>
+</html>
