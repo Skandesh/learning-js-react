@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Namaste React</title>
-    <!--link rel="stylesheet" href="style.css"-->
+    <link rel="stylesheet" href="style.css">
 
     <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
      <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
@@ -54,9 +54,16 @@
         } ,
         
         "Vanakkam da mapla, React la irunthu");
+
+
+        const anotherHeading = React.createElement("h1", {
+            className: "title1",
+            id: "title1"
+        },
+        "Vaada deeii");
         //injecting this element into the 'root' div tag using ReactDOM since we are going to use the browser's already injected 'document' object.
         const root = ReactDOM.createRoot(document.getElementById("root"));
-        root.render(headingUsingReact);
+        root.render([headingUsingReact, anotherHeading]);
         
      </script>
 
